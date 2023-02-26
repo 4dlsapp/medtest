@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Интерактивный Медицинский Тест</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+	.container {
+		max-width: 600px;
+		margin: 20px auto;
+		padding: 20px;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	h1, h2 {
+		text-align: center;
+	}
+
+	.question {
+		margin-bottom: 20px;
+		display: none;
+	}
+
+	.answers {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.answer {
+		margin: 10px;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.answer:hover {
+		background-color: #eee;
+	}
+
+	.selected {
+		background-color: #007bff;
+		color: #fff;
+	}
+
+	.btn-container {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 20px;
+	}
+
+	.btn {
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		color: #fff;
+		background-color: #007bff;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.btn:hover {
+		background-color: #0069d9;
+	}
+
+	.btn:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	.score {
+		text-align: center;
+		font-weight: bold;
+		font-size: 24px;
+		margin-top: 20px;
+	}
+
+.green-flash {
+  animation: green 1s;
+}
+
+.red-flash {
+  animation: red 1s;
+}
+
+@keyframes green {
+  50% {
+    background-color:  #e6ffcc;
+  }
+}
+
+@keyframes red {
+  50% {
+    background-color:  #ffe6cc;
+  }
+}
+
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Медицинский Тест (Гинекология)</h1>
+<div class="question" id="question1" style="display:block;">
+<p>1. 36-летняя женщина госпитализирована вследствие сильных болей в животе во время месячных. При Laparoscopy обнаружены кисты шоколадного цвета в яичнике. Это явление характерно для:</p><div class="answers" data-question="1">
+<div class="answer correct-answer" data-answer="A">Endometriosis</div>
+<div class="answer" data-answer="B">Побочных эффектов при лечении бесплодия</div>
+<div class="answer" data-answer="C">(PID) Chronic Pelvic inflammatory disease</div>
+<div class="answer" data-answer="D">Neurofibromatosis</div></div></div>
+<div class="question" id="question2">
+<p>2. К какой из указанных женщин можно применить определение "страдает гипертонией беременности" (Pregnancy Induced Hypertension)?</p><div class="answers" data-question="2">
+<div class="answer" data-answer="A">К обычно здоровой женщине в начале процесса активных родов с давлением 150\85 мм рт.ст во время схваток</div>
+<div class="answer correct-answer" data-answer="B">К обычно здоровой женщине на 25-й неделе первой беременности с давлением 150\90</div>
+<div class="answer" data-answer="C">К женщине на 15-й неделе второй беременности с давлением 160\85 мм рт.ст.</div>
+<div class="answer" data-answer="D">К обычно здоровой женщине на 26-й неделе первой беременности, у которой уже около -х лет отмечается повышенное давление</div></div></div>
+<div class="question" id="question3">
+<p>3. Синдром повышенной раздражимости яичников - это синдром:</p><div class="answers" data-question="3">
+<div class="answer" data-answer="A">генетически рецессивный</div>
+<div class="answer" data-answer="B">аутоиммунный</div>
+<div class="answer" data-answer="C">аутосомный</div>
+<div class="answer correct-answer" data-answer="D">ятрогенный</div></div></div>
+<div class="question" id="question4">
+<p>4. Что из приведенного ниже может привести к угнетению плода (Fetal Distress) в ходе родов?</p><div class="answers" data-question="4">
+<div class="answer" data-answer="A">Уровень сахара у матери ‎200 mg %</div>
+<div class="answer" data-answer="B">Оценка веса плода в 4,1 кг</div>
+<div class="answer" data-answer="C">Недостаточное развитие легких</div>
+<div class="answer correct-answer" data-answer="D">Понижение артериального давления у матери</div></div></div>
+<div class="question" id="question5">
+<p>5. В каком из приведенных случаев роженице можно вста</p><div class="answers" data-question="5">
+<div class="answer correct-answer" data-answer="A">Если у нее появляется чувствительность в ногах и контроль над ними.</div>
+<div class="answer" data-answer="B">Через 6 часов после родов.</div>
+<div class="answer" data-answer="C">Когда матка сократилась на 2 см ниже пупка.</div>
+<div class="answer" data-answer="D">Только после мочеиспускания.</div></div></div>
+<div class="question" id="question6">
+<p>6. Снижение плодовитости женщины с возрастом связано в основном со снижением:</p><div class="answers" data-question="6">
+<div class="answer" data-answer="A"> Либидо</div>
+<div class="answer" data-answer="B">Функции слизистой матки</div>
+<div class="answer" data-answer="C">Функции яйцеводов</div>
+<div class="answer correct-answer" data-answer="D">Качества ооцитов.</div></div></div>
+<div class="question" id="question7">
+<p>7. Что из приведенного не считается фактором риска при Endometrial carcinoma?</p><div class="answers" data-question="7">
+<div class="answer" data-answer="A">Inferility</div>
+<div class="answer" data-answer="B">Obesity</div>
+<div class="answer correct-answer" data-answer="C">Late Merarche</div>
+<div class="answer" data-answer="D">Breast Carcinoma</div></div></div>
+<div class="question" id="question8">
+<p>8. Гормонозаместительная терапия (hormone replacement therapy) в климактерический период не рекомендуется женщинам:</p><div class="answers" data-question="8">
+<div class="answer" data-answer="A"> После удаления миом.</div>
+<div class="answer" data-answer="B">Страдающим диабетом</div>
+<div class="answer" data-answer="C">Обладающим фактором риска (предрасположенностью) к сердечным заболеваниям</div>
+<div class="answer correct-answer" data-answer="D">Страдавшим ранее тромбоэмболией</div></div></div>
+<div class="question" id="question9">
+<p>9. Женщина на 30-й неделе беременности получает стероиды по причине:</p><div class="answers" data-question="9">
+<div class="answer" data-answer="A">Чтобы улучшить перфузию плаценты</div>
+<div class="answer" data-answer="B">Чтобы ускорить темпы роста плода</div>
+<div class="answer" data-answer="C">Чтобы замедлить генерацию простагландинов</div>
+<div class="answer correct-answer" data-answer="D">Чтобы ускорить развитие легких</div></div></div>
+<div class="question" id="question10">
+<p>10. При первом посещении по поводу беременности желате</p><div class="answers" data-question="10">
+<div class="answer" data-answer="A">Кошачьи царапины опасны для рожениц и для плода</div>
+<div class="answer" data-answer="B">Кошки могут быть носителями CMV</div>
+<div class="answer correct-answer" data-answer="C">Кошки могут переносить токсоплазмоз (Toxoplasmosis).</div>
+<div class="answer" data-answer="D">Вирус герпеса в кошачьих экскрементах представляет опасность для плода</div></div></div>
+<div class="question" id="question11">
+<p>11. Что из приведенного является противопоказанием к применению внутриматочной спирали?</p><div class="answers" data-question="11">
+<div class="answer" data-answer="A">Преждевременные роды с кесаревым сечением</div>
+<div class="answer" data-answer="B">злостное курение</div>
+<div class="answer correct-answer" data-answer="C">Повторяющиеся воспаления тазовой области</div>
+<div class="answer" data-answer="D">тромбоэмболическое заболевание</div></div></div>
+<div class="question" id="question12">
+<p>12. Какой из приведенных параметров свидетельствует об ухудшении состояния двухлетнего ребенка с травмой головы?</p><div class="answers" data-question="12">
+<div class="answer" data-answer="A">Пульс 100, кровяное давление 70 / 110</div>
+<div class="answer correct-answer" data-answer="B">Пульс 60 в минуту, кровяное давление 150\100</div>
+<div class="answer" data-answer="C">Дыхание 32 в минуту, пульс 98 в минуту.</div>
+<div class="answer" data-answer="D">Пульс 90, дыхание 30 в минуту</div></div></div>
+
+
+		<div class="btn-container">
+		<div class="score" id="score" style="display:none;"></div>
+	</div>
+	<script type="text/javascript">
+	// set up variables
+let currentQuestion = 1;
+let score = 0;
+
+// set up event listeners
+const answerContainers = document.querySelectorAll('.answers');
+const prevBtn = document.querySelector('#prevBtn');
+const scoreDisplay = document.querySelector('#score');
+
+// add event listeners to all answer options
+answerContainers.forEach(function(container) {
+  container.addEventListener('click', function(event) {
+    const selectedAnswer = event.target;
+    if (selectedAnswer.classList.contains('answer')) {
+      selectAnswer(event);
+      nextQuestion();
+    }
+  });
+});
+
+// add event listener to restart button
+const restartBtn = document.querySelector('#restartBtn');
+restartBtn.addEventListener('click', function() {
+  currentQuestion = 1;
+  score = 0;
+  scoreDisplay.style.display = 'none';
+  showQuestion(currentQuestion);
+});
+
+showQuestion(currentQuestion);
+
+// function to show current question
+function showQuestion(questionIndex) {
+  // hide all questions
+  const questions = document.querySelectorAll('.question');
+  questions.forEach(function(question) {
+    question.style.display = 'none';
+  });
+
+  // show selected question
+  const selectedQuestion = document.querySelector(`#question${questionIndex}`);
+  selectedQuestion.style.display = 'block';
+}
+
+// function to select answer
+function selectAnswer(event) {
+  // remove selected class from all answers in container
+  const selectedAnswers = document.querySelectorAll(`[data-question='${currentQuestion}'] .answer`);
+  selectedAnswers.forEach(function(answer) {
+    answer.classList.remove('selected');
+  });
+
+  // add selected class to clicked answer
+  const selectedAnswer = event.target;
+  selectedAnswer.classList.add('selected');
+}
+
+
+
+// function to show next question
+function nextQuestion() {
+  // check answer and increment score
+  const selectedAnswer = document.querySelector(`[data-question='${currentQuestion}'] .selected`);
+  const correctAnswer = document.querySelector(`[data-question='${currentQuestion}'] .correct-answer`);
+  if (selectedAnswer && selectedAnswer.dataset.answer === correctAnswer.dataset.answer) {
+    score++;
+    document.body.classList.add('green-flash');
+    setTimeout(() => {
+  document.body.classList.remove('green-flash', 'red-flash');
+}, 1000);
+
+  } else {
+  document.body.classList.add('red-flash');
+  setTimeout(() => {
+  document.body.classList.remove('green-flash', 'red-flash');
+}, 1000);
+
+}
+
+
+  // show next question or score
+  currentQuestion++;
+  if (currentQuestion <= answerContainers.length) {
+    showQuestion(currentQuestion);
+  } else {
+    scoreDisplay.innerHTML = `Вы правильно ответили на ${score} из ${answerContainers.length} вопросов.`;
+    scoreDisplay.style.display = 'block';
+  }
+}
+prevBtn.addEventListener('click', prevQuestion);
+
+</script>
+
